@@ -2,10 +2,9 @@
 pipeline {
  agent any
  stages {
-    stage('Checkout-git') {
+     stage ('Clone') {
         steps {
-            git ls-remote -h git@github.com:alandawi/jenkins-test.git HEAD
-
+            git branch: 'develop', url: "git@github.com:alandawi/jenkins-test.git"
         }
     }
     stage('Run Build') {
