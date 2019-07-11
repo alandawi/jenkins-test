@@ -2,10 +2,10 @@
 pipeline {
  agent any
  stages {
-     stage ('Clone') {
-        steps {
-            git branch: 'develop', url: "git@github.com:alandawi/jenkins-test.git"
-        }
+    stage('Checkout-git') {
+            steps{
+                git url: 'git@github.com:alandawi/jenkins-test.git'
+            }
     }
     stage('Run Build') {
         steps {
